@@ -1,6 +1,7 @@
 # BuildMailer is an ActionMailer class that understands how to send build status reports.
 class BuildMailer < ActionMailer::Base
 
+  default :content_type => "text/html"
   def build_report(build, recipients, from, subject, message, sent_at = Time.now)
     @subject             = "[CruiseControl] #{subject}"
     @build               = build
